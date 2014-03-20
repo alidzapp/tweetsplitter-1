@@ -1,2 +1,2 @@
 Django==1.6.2
-tweepy==1.12
+tweepy==2.2
