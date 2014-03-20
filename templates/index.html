@@ -1,0 +1,13 @@
+{% extends "skeleton.html" %}
+{% load staticfiles %}
+{% block title %}TweetSplitter - Homepage{% endblock %}
+{% block body %}
+   <style>body { padding-top: 50px; padding-bottom: 20px; }</style>
+   <div class="container">
+      <div class="page-header">
+            <h1>Tweet Splitter</h1>
+      </div>
+      <p class="lead">140 character is not enough? then Split down your long hashtaged tweet.</p>
+      <p><a href="login"><img src="{% static "img/twitter-login.png" %}"></a></p>
+   </div>
+{% endblock %}

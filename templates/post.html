@@ -1,0 +1,31 @@
+{% extends "skeleton.html" %}
+{% load staticfiles %}
+{% block title %}TweetSplitter - Post{% endblock %}
+{% block chead %}<script src="{% static "js/vendor/angular.min.js" %}"></script> {% endblock %}
+{% block body %}
+    <div class="container" ng-app="tweetSplitter" ng-controller="postController">
+        <div class="header">
+            <ul class="nav nav-pills pull-right">
+                <li><a href="logout">Logout</a></li>
+            </ul>
+        </div>
+      <div class="jumbotron">
+
+        <div class="container">
+            <div class="alert alert-success" ng-show="success">{$ success $}</div>
+            <div class="alert alert-warning" ng-show="error">{$ error $}</div>
+            <div class="row">
+                <div class="col-xs-2"><img src="{{ user.profile_picture }}" class="img-thumbnail"></div>
+                <div class="col-xs-10">{{ user.twitter_fullname }} <i>(@{{ user.twitter_screen_name }})</i></div>
+            </div>
+            <form>
+                {% csrf_token %}
+                <textarea class="form-control" rows="10" placeholder="Write your post here..." ng-model="formData.tweet"></textarea>
+                <button type="button" class="btn btn-primary" ng-click="postTweet()">Post</button>
+            </form>
+
+
+        </div>
+      </div>
+    </div>
+{% endblock %}
