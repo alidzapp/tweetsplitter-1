@@ -9,7 +9,7 @@ class Members(models.Model):
     profile_picture = models.URLField()
 
     def __unicode__(self):
-        "{0} - {1}".format(self.twitter_fullname, self.twitter_screen_name)
+        return "{0} - {1}".format(self.twitter_fullname, self.twitter_screen_name)
 
 class Members_Data(models.Model):
     ip_address = models.GenericIPAddressField(protocol='IPv4')
